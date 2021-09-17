@@ -12,7 +12,7 @@
         android:id="@+id/profileFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="50dp"
         android:ems="10"
         android:hint="Имя"
         android:inputType="textPersonName"
@@ -112,13 +112,12 @@
         android:id="@+id/logoutBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:clickable="true"
         android:src="@drawable/ic_baseline_directions_run_24"
         app:backgroundTint="@color/bip"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/totoroView"
         app:layout_constraintStart_toStartOf="@+id/totoroView"
-        app:layout_constraintTop_toBottomOf="@+id/profileTg" />
+        app:layout_constraintTop_toBottomOf="@+id/saveButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
