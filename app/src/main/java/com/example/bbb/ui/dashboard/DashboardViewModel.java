@@ -6,14 +6,41 @@ import androidx.lifecycle.ViewModel;
 
 public class DashboardViewModel extends ViewModel {
 
-    private MutableLiveData<String> mText;
+    private final MutableLiveData<String> firstName = new MutableLiveData<>();
+    private final MutableLiveData<String> lastName = new MutableLiveData<>();
+    private final MutableLiveData<String> bio = new MutableLiveData<>();
+    private final MutableLiveData<String> email = new MutableLiveData<>();
+    private final MutableLiveData<String> telegram = new MutableLiveData<>();
 
-    public DashboardViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+    public DashboardViewModel(){ }
+
+    public void init(String firstName, String lastName, String bio, String email, String telegram) {
+        this.firstName.setValue(firstName);
+        this.lastName.setValue(lastName);
+        this.bio.setValue(bio);
+        this.email.setValue(email);
+        this.telegram.setValue(telegram);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public LiveData<String> getFirstName() {
+        return firstName;
     }
+
+    public LiveData<String> getLastName() {
+        return lastName;
+    }
+
+    public LiveData<String> getBio() {
+        return bio;
+    }
+
+    public LiveData<String> getEmail() {
+        return email;
+    }
+
+    public LiveData<String> getTg() {
+        return telegram;
+    }
+
+
 }

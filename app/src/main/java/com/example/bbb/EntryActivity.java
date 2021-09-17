@@ -17,7 +17,7 @@ public class EntryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entry);
 
-        this.httpHelper = new HttpHelper();
+        this.httpHelper =  HttpHelper.getHttpHelper();
 
         EditText nameText = findViewById(R.id.Name);
         EditText passwordText = findViewById(R.id.Password);
@@ -30,15 +30,17 @@ public class EntryActivity extends AppCompatActivity {
                 /*String name = nameText.getText().toString();
                 String password = passwordText.getText().toString();*/
 
-                String name = "snnn";
+                String name = "gleb";
                 String password = "Gig8liLi";
 
                 if (!name.equals("") && !password.equals("")) {
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
-                            if (httpHelper.HttpLogin(name, password))
+                            if (httpHelper.HttpLogin(name, password)) {
                                 startActivity(new Intent(EntryActivity.this, MainMenuActivity.class));
+                                finish();
+                            }
                         }
                     }).start();
                 }
@@ -51,6 +53,8 @@ public class EntryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(EntryActivity.this, RegistrationActivity.class));
+
+                finish();
             }
         });
     }

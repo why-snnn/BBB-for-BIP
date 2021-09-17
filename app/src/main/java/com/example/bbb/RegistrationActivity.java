@@ -17,7 +17,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
 
-        this.httpHelper = new HttpHelper();
+        this.httpHelper =  HttpHelper.getHttpHelper();
 
         final EditText nameText = findViewById(R.id.nameText);
         final EditText pass1Text = findViewById(R.id.pass1Text);
@@ -30,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if (httpHelper.HttpRegistration("snnn12", "Gig8liLi"))
+                        if (httpHelper.HttpRegistration("321", "Gig8liLi"))
                             startActivity(new Intent(RegistrationActivity.this, MainMenuActivity.class));
                     }
                 }).start();
